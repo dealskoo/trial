@@ -1,0 +1,62 @@
+{
+    "name": "dealskoo/trial",
+    "description": "Trial",
+    "homepage": "https://www.dealskoo.com",
+    "support": {
+        "issues": "https://github.com/dealskoo/trial/issues",
+        "source": "https://github.com/dealskoo/trial"
+    },
+    "keywords": [
+        "Laravel",
+        "Trial",
+        "Dealskoo"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Dealskoo\\Trial\\": "src/",
+            "Database\\Factories\\Dealskoo\\Trial\\Models\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dealskoo\\Trial\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hadi",
+            "email": "hadi@dealskoo.com",
+            "homepage": "https://www.dealskoo.com"
+        }
+    ],
+    "scripts": {
+        "post-autoload-dump": [
+            "@php ./vendor/bin/testbench package:discover --ansi"
+        ]
+    },
+    "require": {
+        "php": ">=7.1",
+        "dealskoo/admin": "dev-master",
+        "laravel/framework": ">=7.20"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.23",
+        "orchestra/canvas": "^6.10",
+        "phpunit/phpunit": "^9.5"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dealskoo\\Trial\\Providers\\TrialServiceProvider"
+            ],
+            "aliases": {}
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
