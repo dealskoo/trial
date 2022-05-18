@@ -12,8 +12,7 @@ class PermissionTest extends TestCase
 
     public function test_permissions()
     {
-        $this->assertNotNull(PermissionManager::getPermission('deals.index'));
-        $this->assertNotNull(PermissionManager::getPermission('deals.show'));
-        $this->assertNotNull(PermissionManager::getPermission('deals.edit'));
+        $this->assertNotNull(PermissionManager::getPermission('trial.trial'));
+        $this->assertNotNull(PermissionManager::getPermission('trials.index'));
     }
 }
