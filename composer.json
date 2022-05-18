@@ -41,6 +41,11 @@
     "require": {
         "php": ">=7.1",
         "dealskoo/admin": "dev-master",
+        "dealskoo/brand": "dev-master",
+        "dealskoo/category": "dev-master",
+        "dealskoo/country": "dev-master",
+        "dealskoo/platform": "dev-master",
+        "dealskoo/product": "dev-master",
         "dealskoo/seller": "dev-master",
         "laravel/framework": ">=7.20"
     },
