@@ -15,7 +15,9 @@ class CreateTrialsTable extends Migration
     {
         Schema::create('trials', function (Blueprint $table) {
             $table->id();
+            $table->integer('clicks')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
