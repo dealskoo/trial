@@ -41,10 +41,10 @@ class TrialController extends SellerController
             $row = [];
             $row[] = $trial->id;
             $row[] = $trial->title . ' <span class="badge bg-success">' . $trial->off . '% Off</span>';
-            $row[] = $trial->country->currency_symbol . $trial->price . ' <del>' . $trial->country->currency_symbol . $trial->product->price . '</del>';
+            $row[] = $trial->country->currency_symbol . $trial->refund . ' <del>' . $trial->country->currency_symbol . $trial->product->price . '</del>';
+            $row[] = $trial->quantity;
             $row[] = $trial->country->currency_symbol . $trial->ship_fee;
             $row[] = $trial->clicks;
-            $row[] = $trial->code;
             $row[] = $trial->product->name;
             $row[] = $trial->category->name;
             $row[] = $trial->country->name;
