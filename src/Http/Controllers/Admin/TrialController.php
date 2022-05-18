@@ -42,7 +42,7 @@ class TrialController extends AdminController
         foreach ($trials as $trial) {
             $row = [];
             $row[] = $trial->id;
-            $row[] = $trial->title . ' <span class="badge bg-success">' . $trial->off . '% Off</span>';
+            $row[] = $trial->title . ' <span class="badge bg-success">' . $trial->refund_rate . '% ' . __('Refund') . '</span>';
             $row[] = $trial->country->currency_symbol . $trial->refund . ' <del>' . $trial->country->currency_symbol . $trial->product->price . '</del>';
             $row[] = $trial->quantity;
             $row[] = $trial->country->currency_symbol . $trial->ship_fee;

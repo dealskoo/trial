@@ -20,7 +20,7 @@ class Trial extends Model
     use HasFactory, SoftDeletes, HasSlug, HasCategory, HasCountry, HasSeller, HasBrand, HasPlatform, HasProduct;
 
     protected $appends = [
-        'cover', 'cover_url'
+        'cover', 'cover_url', 'refund_rate'
     ];
 
     protected $fillable = [
@@ -55,6 +55,11 @@ class Trial extends Model
     public function getCoverUrlAttribute()
     {
         return $this->product->cover_url;
+    }
+
+    public function getRefundRateAttribute()
+    {
+        return round(($this->refund / $this->product->price) * 100);
     }
 
     public function scopeApproved(Builder $builder)

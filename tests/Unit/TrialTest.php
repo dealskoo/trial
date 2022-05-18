@@ -30,6 +30,13 @@ class TrialTest extends TestCase
         $this->assertEquals($trial->slug, Str::lower($slug));
     }
 
+    public function test_refund_rate()
+    {
+        $trial = Trial::factory()->create();
+        $this->assertLessThan($trial->product->price, $trial->refund);
+        $this->assertLessThan(100, $trial->refund_rate);
+    }
+
     public function test_approved()
     {
         $trial = Trial::factory()->approved()->create();
