@@ -18,6 +18,7 @@ class CreateTrialsTable extends Migration
             $table->string('title');
             $table->string('slug')->unique()->nullable();
             $table->decimal('refund', 10, 2)->default(0);
+            $table->integer('quantity')->default(0);
             $table->decimal('ship_fee', 10, 2)->default(0);
             $table->integer('clicks')->default(0);
             $table->unsignedBigInteger('seller_id');
