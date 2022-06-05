@@ -7,6 +7,7 @@ use Dealskoo\Admin\Http\Controllers\Controller as AdminController;
 use Dealskoo\Admin\Rules\Slug;
 use Dealskoo\Trial\Models\Trial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class TrialController extends AdminController
 {
@@ -42,7 +43,7 @@ class TrialController extends AdminController
         foreach ($trials as $trial) {
             $row = [];
             $row[] = $trial->id;
-            $row[] = $trial->title . ' <span class="badge bg-success">' . $trial->refund_rate . '% ' . __('Refund') . '</span>';
+            $row[] = Str::words($trial->title, 5, '...') . ' <span class="badge bg-success">' . $trial->refund_rate . '% ' . __('Refund') . '</span>';
             $row[] = $trial->country->currency_symbol . $trial->refund . ' <del>' . $trial->country->currency_symbol . $trial->product->price . '</del>';
             $row[] = $trial->quantity;
             $row[] = $trial->country->currency_symbol . $trial->ship_fee;
