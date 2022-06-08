@@ -2,7 +2,6 @@
 
 namespace Dealskoo\Trial\Models;
 
-use Carbon\Carbon;
 use Dealskoo\Admin\Traits\HasSlug;
 use Dealskoo\Brand\Traits\HasBrand;
 use Dealskoo\Category\Traits\HasCategory;
@@ -70,7 +69,7 @@ class Trial extends Model
 
     public function scopeAvaiabled(Builder $builder)
     {
-        $now = Carbon::now();
+        $now = now();
         return $builder->whereNotNull('approved_at')->where('start_at', '<=', $now)->where('end_at', '>=', $now);
     }
 

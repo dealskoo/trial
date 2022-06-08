@@ -2,7 +2,6 @@
 
 namespace Dealskoo\Trial\Http\Controllers\Admin;
 
-use Carbon\Carbon;
 use Dealskoo\Admin\Http\Controllers\Controller as AdminController;
 use Dealskoo\Admin\Rules\Slug;
 use Dealskoo\Trial\Models\Trial;
@@ -103,7 +102,7 @@ class TrialController extends AdminController
         $trial->fill($request->only([
             'slug'
         ]));
-        $trial->approved_at = $request->boolean('approved', false) ? Carbon::now() : null;
+        $trial->approved_at = $request->boolean('approved', false) ? now() : null;
         $trial->save();
         return back()->with('success', __('admin::admin.update_success'));
     }
