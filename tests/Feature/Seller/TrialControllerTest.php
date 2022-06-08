@@ -2,7 +2,6 @@
 
 namespace Dealskoo\Trial\Tests\Feature\Seller;
 
-use Carbon\Carbon;
 use Dealskoo\Country\Models\Country;
 use Dealskoo\Product\Models\Product;
 use Dealskoo\Seller\Models\Seller;
@@ -49,7 +48,7 @@ class TrialControllerTest extends TestCase
             'quantity',
             'product_id',
             'ship_fee'
-        ]), ['activity_date' => Carbon::parse($trial->start_at)->format('m/d/Y') . ' - ' . Carbon::parse($trial->end_at)->format('m/d/Y')]]));
+        ]), ['activity_date' => $trial->start_at->format('m/d/Y') . ' - ' . $trial->end_at->format('m/d/Y')]]));
         $response->assertStatus(302);
     }
 

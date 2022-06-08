@@ -2,7 +2,6 @@
 
 namespace Dealskoo\Trial\Http\Controllers\Seller;
 
-use Carbon\Carbon;
 use Dealskoo\Product\Models\Product;
 use Dealskoo\Seller\Http\Controllers\Controller as SellerController;
 use Dealskoo\Trial\Models\Trial;
@@ -51,11 +50,11 @@ class TrialController extends SellerController
             $row[] = $trial->country->name;
             $row[] = $trial->brand ? $trial->brand->name : '';
             $row[] = $trial->platform ? $trial->platform->name : '';
-            $row[] = $trial->approved_at != null ? Carbon::parse($trial->approved_at)->format('Y-m-d H:i:s') : null;
-            $row[] = $trial->start_at != null ? Carbon::parse($trial->start_at)->format('Y-m-d') : null;
-            $row[] = $trial->end_at != null ? Carbon::parse($trial->end_at)->format('Y-m-d') : null;
-            $row[] = Carbon::parse($trial->created_at)->format('Y-m-d H:i:s');
-            $row[] = Carbon::parse($trial->updated_at)->format('Y-m-d H:i:s');
+            $row[] = $trial->approved_at != null ? $trial->approved_at->format('Y-m-d H:i:s') : null;
+            $row[] = $trial->start_at != null ? $trial->start_at->format('Y-m-d') : null;
+            $row[] = $trial->end_at != null ? $trial->end_at->format('Y-m-d') : null;
+            $row[] = $trial->created_at->format('Y-m-d H:i:s');
+            $row[] = $trial->updated_at->format('Y-m-d H:i:s');
             $edit_link = '';
             $destroy_link = '';
             if ($trial->approved_at == null) {

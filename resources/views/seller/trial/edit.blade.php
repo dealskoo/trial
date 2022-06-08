@@ -83,7 +83,7 @@
                                     - {{ __('trial::trial.end_at') }}</label>
                                 <input type="text" class="form-control date" id="activity_date" name="activity_date"
                                        data-toggle="date-picker"
-                                       value="{{ old('activity_date', \Carbon\Carbon::parse($trial->start_at)->format('m/d/Y') . ' - ' . \Carbon\Carbon::parse($trial->end_at)->format('m/d/Y')) }}"
+                                       value="{{ old('activity_date', $trial->start_at->format('m/d/Y') . ' - ' . $trial->end_at->format('m/d/Y')) }}"
                                        required tabindex="6">
                             </div>
                         </div> <!-- end row -->
