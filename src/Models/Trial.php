@@ -6,6 +6,8 @@ use Dealskoo\Admin\Traits\HasSlug;
 use Dealskoo\Brand\Traits\HasBrand;
 use Dealskoo\Category\Traits\HasCategory;
 use Dealskoo\Country\Traits\HasCountry;
+use Dealskoo\Favorite\Traits\Favoriteable;
+use Dealskoo\Like\Traits\Likeable;
 use Dealskoo\Platform\Traits\HasPlatform;
 use Dealskoo\Product\Traits\HasProduct;
 use Dealskoo\Seller\Traits\HasSeller;
@@ -17,7 +19,7 @@ use Laravel\Scout\Searchable;
 
 class Trial extends Model
 {
-    use HasFactory, SoftDeletes, HasSlug, HasCategory, HasCountry, HasSeller, HasBrand, HasPlatform, HasProduct, Searchable;
+    use HasFactory, SoftDeletes, HasSlug, HasCategory, HasCountry, HasSeller, HasBrand, HasPlatform, HasProduct, Likeable, Favoriteable, Searchable;
 
     protected $appends = [
         'cover', 'cover_url', 'refund_rate'
